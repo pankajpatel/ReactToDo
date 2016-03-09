@@ -1,4 +1,5 @@
-var React = require('react');
+var React =  require( 'react' );
+var ReactDOM =  require( 'react-dom' );
 
 
 var App = React.createClass({
@@ -69,7 +70,7 @@ var TaskAction = React.createClass({
     if( !this.props.completed ){
       return (
           <button type="button" 
-            onClick={this.props.setStatus.bind(this, this.props.index)} 
+            onClick={this.props.setStatus.bind(null, this.props.index)} 
             className="btn btn-xs btn-success">
               <i className="glyphicon glyphicon-ok"></i>
           </button>   
@@ -77,7 +78,7 @@ var TaskAction = React.createClass({
     } else {
       return (
           <button type="button" 
-            onClick={this.props.setStatus.bind(this, this.props.index)} 
+            onClick={this.props.setStatus.bind(null, this.props.index)} 
             className="btn btn-xs btn-info">
               <i className="glyphicon glyphicon-repeat"></i>
           </button>   
@@ -89,7 +90,7 @@ var TaskAction = React.createClass({
       <div className="btn-group btn-group-xs pull-right" role="group">
         {this.getButton()}
         <button type="button" 
-          onClick={this.props.remove.bind(this, this.props.index)}
+          onClick={this.props.remove.bind(null, this.props.index)}
           className="btn btn-xs btn-danger" >
             <i className="glyphicon glyphicon-remove"></i>
         </button>
@@ -132,7 +133,4 @@ var ToDoList = React.createClass({
   }
 });
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('container')
-);
+ReactDOM.render( <App />, document.getElementById('container') );
